@@ -1,0 +1,15 @@
+---
+ci_host: "ci.example.com"
+# Jenkins Token in Project Settings
+token: "6917465bb6"
+# for each branch, tell which Projects to build
+projects:
+  "refs/heads/master": "StagingDeploy"
+  "refs/heads/staging": StagingApp
+
+# Jenkins needs authentication with a user/pass
+# of a user of the ci system
+basic_auth:
+  username: bot
+  password: password
+
