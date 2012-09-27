@@ -4,8 +4,13 @@ ci_host: "ci.example.com"
 token: "6917465bb6"
 # for each branch, tell which Projects to build
 projects:
-  "refs/heads/master": "StagingDeploy"
-  "refs/heads/staging": StagingApp
+  "refs/heads/master":
+    project: "StagingDeploy"
+    token: "6917465bb6"
+    build_params: "&SPHINX=no"
+  "refs/heads/staging":
+    project: "StagingAPP"
+    token: "6917465bb6"
 
 # Jenkins needs authentication with a user/pass
 # of a user of the ci system
