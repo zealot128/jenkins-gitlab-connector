@@ -10,7 +10,8 @@ bundle
 cp config.yml.example config.yml
 # edit config.yml
 
-bash start.sh
+rake -T
+rake start
 ```
 
 Starts a mini-app on HOST:3850.
