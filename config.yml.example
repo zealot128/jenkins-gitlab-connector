@@ -1,16 +1,19 @@
 ---
 ci_host: "ci.example.com"
-# Jenkins Token in Project Settings
-token: "6917465bb6"
 # for each branch, tell which Projects to build
 projects:
-  "refs/heads/master":
-    project: "StagingDeploy"
-    token: "6917465bb6"
-    build_params: "&SPHINX=no"
-  "refs/heads/staging":
-    project: "StagingAPP"
-    token: "6917465bb6"
+  "gitlab-projectname":  # from which gitlab project
+    "refs/heads/master": # when pushed onto branch
+      project: "StagingDeploy"   # trigger Jenkins project
+      # Jenkins Token in Project Settings
+      token: "6917465bb6"  # with token
+      build_params: "&SPHINX=no" # extra build params uri-escaped
+    "refs/heads/staging":
+      project: "StagingAPP"
+      token: "6917465bb6"
+  "another-gitlab-project":
+    "refs/heads/another-branch":
+      project: "another"
 
 # Jenkins needs authentication with a user/pass
 # of a user of the ci system
